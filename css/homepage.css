@@ -232,6 +232,8 @@ body {
   .sobre-mim h2 {
     margin-top: 20px;
   }
+
+  
 }
 
 
@@ -571,25 +573,31 @@ footer {
 
 /* Responsiveness: stack boxes on small screens (max-width: 600px) */
 @media (max-width: 600px) {
+  /* Esconde a imagem da timeline no mobile para evitar sobreposição */
+  .timeline-foto {
+    display: none;
+  }
+
   /* Move a linha para a esquerda */
-  .timeline::before { left: 20px; transform: none; }
+  .timeline::before { 
+    left: 20px; 
+    transform: none; 
+  }
   
   /* Move o ponto para a linha */
   .timeline ul li::after { 
-      left: 20px; 
-      transform: none; 
-      top: 15px;
+    left: 20px; 
+    transform: none; 
+    top: 15px;
   }
   
-  /* Faz com que todas as caixas ocupem quase 100% da largura, alinhadas à direita da linha */
+  /* Ajusta as caixas de conteúdo */
   .timeline ul li div,
   .timeline ul li div.esq {
-    width: calc(100% - 60px); /* Deixa espaço para a linha e padding */
-    left: 60px !important; /* Move a caixa para a direita da linha */
+    width: calc(100% - 60px); 
+    left: 60px !important; 
     right: auto !important;
-    text-align: left; /* Garante que o texto volte a ser alinhado à esquerda */
-    
-    /* Corrige as bordas para a nova posição */
+    text-align: left; 
     border-left: 5px solid #73022C; 
     border-right: none !important;
   }
